@@ -1,0 +1,40 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+
+
+
+<table id="tbl_title_list" align='center' cellspacing="0">
+    <thead>
+        <tr align='center'>
+            <th>Title ID</th>
+            <th>Title Name</th>
+            <th>Release Year</th>
+
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Title ID</th>
+            <th>Title Name</th>
+            <th>Release Year</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        <% for(var a=0; a< data.length; a++) {%>
+        <tr>
+            <td align='center'><a href='/detail/<%= data[a].TitleId %>'><%= data[a].TitleId %></a></td>
+            <td align='center'><%= data[a].TitleName %></td>
+            <td align='center'><%= data[a].ReleaseYear %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
+<script>
+$(document).ready(function () {
+    $('#tbl_title_list').DataTable();
+});
+</script>

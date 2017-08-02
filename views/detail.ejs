@@ -1,0 +1,61 @@
+<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+
+<script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.15/datatables.min.js"></script>
+
+<a href='/'>Back To List </a>
+<br/>
+<br/>
+
+<h2>Item Details</h2>
+<br/>
+<br/>
+
+
+<table class="tbl_title_list" width='100%'>
+    <thead>
+        <tr align='center'>
+            <th align='center'>Id</th>
+            <th align='center'>TitleName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align='center'><%= data.TitleId %></td>
+            <td  align='center'><%= data.TitleName %></td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Awards Won</h2>
+<br/>
+<br/>
+
+<table id="tbl_title_list" align='center' cellspacing="0">
+    <thead>
+        <tr align='center'>
+            <th>Award</th>
+            <th>Year</th>
+            <th>Won</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var a=0; a< data.Awards.length; a++) {%>
+        <tr>
+            <td  align='center'><%= data.Awards[a].Award %></td>
+            <td  align='center'><%= data.Awards[a].AwardYear %></td>
+            <td  align='center'><%= data.Awards[a].AwardWon %></td>
+        </tr>
+        <% } %>
+    </tbody>
+</table>
+
+
+<script>
+$(document).ready(function () {
+    $('#tbl_title_list').DataTable();
+});
+</script>
+
